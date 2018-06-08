@@ -8,4 +8,4 @@ Default port: 8090
 Database: In-memory H2 database
 Scripts: /src/main/resources/*.sql
 Spring settings: /src/main/resources/*.properties
-Accounts: user:Nick password=Nack
+Accounts: user = Nick password = Nack
