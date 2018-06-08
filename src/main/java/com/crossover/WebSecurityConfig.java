@@ -41,11 +41,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .jdbcAuthentication()
                 .dataSource(dataSource)
                 .withUser("user").password("password").roles("ANONYMOUS")
-                .and().withUser("admin").password("admin").roles("ADMIN")
-                .and().withUser("Ann").password("Boe").roles("USER")
-                .and().withUser("Bob").password("Joe").roles("USER")
-                .and().withUser("Jon").password("Doe").roles("USER")
-                .and().withUser("Rob").password("Zoe").roles("USER");
+                .and().withUser("Nick").password("Nack").roles("USER");
         ;
     }
 }
