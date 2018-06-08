@@ -100,7 +100,7 @@ public class ExamService {
             throw new IllegalArgumentException("You must specify correct answers!");
         }
 
-        final float step = (float) (MAX_GRADE / correctAnswers.size());
+        final float step = (float) (MAX_GRADE / 3);
         final Set<Integer> correctCount = new HashSet<>();
         final Set<Integer> incorrectCount = new HashSet<>();
 
