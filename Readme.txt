@@ -4,8 +4,8 @@ Environment: Linux Mint 17 (Ubuntu)
 Build: mvn clean install
 Tests: mvn clean test
 Run  : mvn spring-boot:run
-Default port: 9000
+Default port: 8090
 Database: In-memory H2 database
 Scripts: /src/main/resources/*.sql
 Spring settings: /src/main/resources/*.properties
-Accounts: admin/admin or Ann/Boe or see data.sql in scripts
+Accounts: user:Nick password=Nack
