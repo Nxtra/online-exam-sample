@@ -11,7 +11,7 @@ INSERT INTO ANSWER (question_id, name, is_correct) VALUES (1, 'Serialization', 0
 INSERT INTO QUESTION (exam_id, name, multi_answer) VALUES (1, 'Which kind of methods are new to Java 8?', 1);
 INSERT INTO ANSWER (question_id, name, is_correct) VALUES (2, 'Abstract methods', 0);
 INSERT INTO ANSWER (question_id, name, is_correct) VALUES (2, 'Default methods', 1);
-INSERT INTO ANSWER (question_id, name, is_correct) VALUES (2, 'Final methods', 1);
+INSERT INTO ANSWER (question_id, name, is_correct) VALUES (2, 'Final methods', 0);
 
 INSERT INTO QUESTION (exam_id, name, multi_answer) VALUES (1, 'The default access modifier is ?', 0);
 INSERT INTO ANSWER (question_id, name, is_correct) VALUES (3, 'package private', 1);
