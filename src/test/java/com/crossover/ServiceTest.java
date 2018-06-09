@@ -30,7 +30,7 @@ public class ServiceTest {
             assertNotNull(ex);
             assertNotNull(ex.getName());
             assertNotNull(ex.getDescription());
-            assertTrue(ex.getName().contains("Java") || ex.getName().contains("Scala"));
+            assertTrue(ex.getName().contains("Java") || ex.getName().contains("Quiz"));
             logger.info(ex.getDescription());
         }
     }

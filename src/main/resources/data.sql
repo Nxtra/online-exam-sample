@@ -1,5 +1,6 @@
 -- Exams
-INSERT INTO EXAM (name, description) VALUES ('Java Exam', 'Show your Java skills!');
+INSERT INTO EXAM (name, description) VALUES ('Java Exam', 'Show those Java skills!');
+INSERT INTO EXAM (name, description) VALUES ('Quiz Exam', 'Quiz up ya biatch');
 
 
 -- Java Questions with Answers
@@ -18,18 +19,18 @@ INSERT INTO ANSWER (question_id, name, is_correct) VALUES (3, 'package private',
 INSERT INTO ANSWER (question_id, name, is_correct) VALUES (3, 'protected', 0);
 INSERT INTO ANSWER (question_id, name, is_correct) VALUES (3, 'public', 0);
 
--- -- Scala Questions with Answers
--- INSERT INTO QUESTION (exam_id, name, multi_answer) VALUES (2, 'How to write a for loop?', 0);
--- INSERT INTO ANSWER (question_id, name, is_correct) VALUES (4, 'for (i <- 0 until 10) { ... }', 1);
--- INSERT INTO ANSWER (question_id, name, is_correct) VALUES (4, 'for (int i=0; i < 10; i++) { ... }', 0);
--- INSERT INTO ANSWER (question_id, name, is_correct) VALUES (4, 'Scala have no for loops', 0);
---
--- INSERT INTO QUESTION (exam_id, name, multi_answer) VALUES (2, 'What is Scala?', 1);
--- INSERT INTO ANSWER (question_id, name, is_correct) VALUES (5, 'Programming language', 1);
--- INSERT INTO ANSWER (question_id, name, is_correct) VALUES (5, 'Teatro La Scala, Milano, Italy', 1);
--- INSERT INTO ANSWER (question_id, name, is_correct) VALUES (5, 'The Rock in Russia', 1);
---
--- INSERT INTO QUESTION (exam_id, name, multi_answer) VALUES (2, 'Can I use existing Java code from Scala?', 0);
--- INSERT INTO ANSWER (question_id, name, is_correct) VALUES (6, 'Yes', 1);
--- INSERT INTO ANSWER (question_id, name, is_correct) VALUES (6, 'No', 0);
--- INSERT INTO ANSWER (question_id, name, is_correct) VALUES (6, 'Only starting from Java 8', 0);
+ -- Quiz Questions with Answers
+ INSERT INTO QUESTION (exam_id, name, multi_answer) VALUES (2, 'Which President served more than two termes?', 0);
+ INSERT INTO ANSWER (question_id, name, is_correct) VALUES (4, 'T. Roosevelt', 0);
+ INSERT INTO ANSWER (question_id, name, is_correct) VALUES (4, 'G. Bush senior', 0);
+ INSERT INTO ANSWER (question_id, name, is_correct) VALUES (4, 'F.D. Roosevelt', 1);
+
+ INSERT INTO QUESTION (exam_id, name, multi_answer) VALUES (2, 'Who was the first triple time world champion of cycling?', 1);
+ INSERT INTO ANSWER (question_id, name, is_correct) VALUES (5, 'Peter Sagen', 0);
+ INSERT INTO ANSWER (question_id, name, is_correct) VALUES (5, 'Alfredo Binda', 1);
+ INSERT INTO ANSWER (question_id, name, is_correct) VALUES (5, 'Eddy Merckx', 0);
+
+ INSERT INTO QUESTION (exam_id, name, multi_answer) VALUES (2, 'What video has the Youtube views record?', 0);
+ INSERT INTO ANSWER (question_id, name, is_correct) VALUES (6, 'Gangnam Style - Psy', 0);
+ INSERT INTO ANSWER (question_id, name, is_correct) VALUES (6, 'See You Again - Wiz Khalifa', 1);
+ INSERT INTO ANSWER (question_id, name, is_correct) VALUES (6, 'Roar - Katty Perrry', 0);
