@@ -10,14 +10,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@Profile("test")
-@TestPropertySource(locations = "classpath:/application-test.properties", inheritProperties = false)
+@ActiveProfiles("test")
+@TestPropertySource(locations = "classpath:/application-test.yml", inheritProperties = false)
 @SpringApplicationConfiguration(classes = {JpaConfig.class, Application.class})
 public class ServiceTest {
     @Autowired
