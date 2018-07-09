@@ -40,7 +40,8 @@ public class ExamController {
     @RequestMapping(value = {"/", "/index"})
     public String home(Model model, HttpServletRequest request) {
         final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if (auth.isAuthenticated()) {
+       // if (auth.isAuthenticated()) {
+        if (true) {
             final int examId = (Integer) request.getSession().getAttribute("examId");
             final Exam exam = examSvc.getExam(examId);
 
@@ -66,9 +67,9 @@ public class ExamController {
         } else {
             return "redirect:/login";
         }
-    }
+        }
 
-    private int getRemainingTime(HttpServletRequest request) {
+        private int getRemainingTime(HttpServletRequest request) {
         final long start = (long) request.getSession().getAttribute("examStarted");
         final int remaining = (int) ((examTimeMins * 60) - ((Calendar.getInstance().getTimeInMillis() - start) / 1000));
         return remaining;
