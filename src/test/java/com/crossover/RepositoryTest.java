@@ -1,5 +1,6 @@
 package com.crossover;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import com.crossover.entity.*;
 import com.crossover.repository.*;
 import org.junit.Test;
@@ -7,11 +8,9 @@ import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.context.annotation.Profile;
-import org.springframework.test.context.ActiveProfiles;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Calendar;
@@ -19,11 +18,12 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ActiveProfiles("test")
-@TestPropertySource(locations = "classpath:/application-test.yml", inheritProperties = false)
-@SpringApplicationConfiguration(classes = {JpaConfig.class, Application.class})
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = {JpaConfig.class, Application.class})
+@TestPropertySource(properties = "classpath:/application-test.yml", inheritProperties = false)
 public class RepositoryTest {
+
+    final Logger LOGGER = LoggerFactory.getLogger(RepositoryTest.class);
 
     @Autowired
     private ExamRepository examRepo;

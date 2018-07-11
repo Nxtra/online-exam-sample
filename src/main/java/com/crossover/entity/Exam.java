@@ -1,14 +1,16 @@
 package com.crossover.entity;
 
+import org.omg.PortableInterceptor.INACTIVE;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "EXAM")
-public class Exam extends AbstractPersistable<Integer> {
+public class Exam {
 
     public String getName() {
         return name;
@@ -25,6 +27,18 @@ public class Exam extends AbstractPersistable<Integer> {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    @Id
+    @Column
+    private Integer id;
 
     @Column
     private String name;
