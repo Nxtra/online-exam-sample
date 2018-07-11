@@ -47,6 +47,9 @@ hs_err_pid*
 #target
 target/
 
+#docker secrets
+secrets/
+
 ## Plugin-specific files:
 
 # IntelliJ
