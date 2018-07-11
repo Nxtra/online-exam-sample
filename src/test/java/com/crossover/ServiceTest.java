@@ -16,6 +16,7 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(properties = "classpath:/application-test.yml", classes = {JpaConfig.class, Application.class})
+@ActiveProfiles(profiles = "test")
 public class ServiceTest {
     @Autowired
     ExamService svc;

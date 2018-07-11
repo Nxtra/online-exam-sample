@@ -1,6 +1,5 @@
 package com.crossover;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
 import com.crossover.entity.*;
 import com.crossover.repository.*;
 import org.junit.Test;
@@ -9,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,6 +21,7 @@ import static org.junit.Assert.*;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {JpaConfig.class, Application.class})
 @TestPropertySource(properties = "classpath:/application-test.yml", inheritProperties = false)
+@ActiveProfiles(profiles = "test")
 public class RepositoryTest {
 
     final Logger LOGGER = LoggerFactory.getLogger(RepositoryTest.class);

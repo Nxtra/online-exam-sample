@@ -1,40 +1,51 @@
+exam:
+  time:
+    minutes: 2
+
 logging:
   level:
     org:
+      hibernate: ERROR
       springframework:
-        web: INFO
-        security: INFO
-        hibernate: INFO
+        data:
+          jdbc: DEBUG
+          jpa: DEBUG
+        security: ERROR
+        web: ERROR
 
-#Datasource
+management:
+  security:
+    enabled: false
+
+security:
+  basic:
+    enabled: false
+
+server:
+  port: 8090
+
 spring:
-  datasource:
-    url: jdbc:h2:mem:exam;MODE=MYSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
-    initialize: true
-    schema: classpath:/schema.sql
   data:
     jpa:
       repositories:
         enabled: true
+  datasource:
+    driver-class-name: org.h2.Driver
+    initialize: true
+    password: ''
+    schema: classpath:/schema.sql
+    url: jdbc:h2:mem:exam;MODE=MYSQL;DB_CLOSE_DELAY=-1
+    username: sa
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
   jpa:
-    show-sql: true
     format-sql: true
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL5Dialect
+    generate-ddl: false
     hibernate:
-      ddl-auto: create-drop
-    generate-ddl: true
-
-#Exam
-exam:
-  time:
-    minutes: 1
-
-#Server
-server:
-  port: 9000
+      ddl-auto: none
+    show-sql: true
+  thymeleaf:
+    cache: false
 
