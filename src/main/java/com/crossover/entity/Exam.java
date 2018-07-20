@@ -3,10 +3,7 @@ package com.crossover.entity;
 import org.omg.PortableInterceptor.INACTIVE;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "EXAM")
@@ -37,7 +34,7 @@ public class Exam {
     }
 
     @Id
-    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column

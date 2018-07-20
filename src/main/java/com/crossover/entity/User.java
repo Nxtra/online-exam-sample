@@ -25,8 +25,29 @@ public class User extends AbstractPersistable<Integer> {
         this.password = password;
     }
 
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
     @Column
     private String username;
     @Column
     private String password;
+    @Column
+    private boolean enabled;
+    @Column
+    private String role;
+
 }

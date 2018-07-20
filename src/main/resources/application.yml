@@ -2,29 +2,14 @@ exam:
   time:
     minutes: 2
 
-logging:
-  level:
-    org:
-      hibernate: ERROR
-      springframework:
-        data:
-          jdbc: DEBUG
-          jpa: DEBUG
-        security: ERROR
-        web: ERROR
 
-management:
-  security:
-    enabled: false
-
-security:
-  basic:
-    enabled: false
-  ignored: /**
-
+jasypt:
+  encryptor:
+    password: ${JASYPT_ENCRYPTOR_PASSWORD}
+  algorithm: PBEWITHMD5ANDDES
 
 server:
-  port: 8090
+  port: 8080
 
 spring:
   security:
@@ -35,14 +20,13 @@ spring:
         enabled: true
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/quiz
-    username: dbtester
-    password: ENC(C71GSIu0mO9v3HDM52H9N6O8CL1L1oIr)
+    url: jdbc:mysql://localhost:3306/quiz?autoReconnect=true&useSSL=false
+    username: dbuser
+    password: dbp4ss
+    initialize: true
   jpa:
-    format-sql: true
-    generate-ddl: false
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
     show-sql: true
     properties:
       hibernate:
@@ -50,7 +34,14 @@ spring:
   thymeleaf:
     cache: false
 
-jasypt:
-  encryptor:
-    password: ${JASYPT_ENCRYPTOR_PASSWORD}
-  algorithm: PBEWITHMD5ANDDES
+---
+spring:
+  profiles: container
+  datasource:
+    url: jdbc:mysql://${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+    initialize: true
+
+
+

@@ -9,7 +9,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "PROTOCOL")
-public class ExamProtocol extends AbstractPersistable<Integer> {
+public class    ExamProtocol extends AbstractPersistable<Integer> {
     public User getUser() {
         return user;
     }

@@ -33,7 +33,6 @@ spring:
     driver-class-name: org.h2.Driver
     initialize: true
     password: ''
-    schema: classpath:/schema.sql
     url: jdbc:h2:mem:exam;MODE=MYSQL;DB_CLOSE_DELAY=-1
     username: sa
   h2:
@@ -44,7 +43,7 @@ spring:
     format-sql: true
     generate-ddl: false
     hibernate:
-      ddl-auto: none
+      ddl-auto: create-drop
     show-sql: true
   thymeleaf:
     cache: false

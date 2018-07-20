@@ -44,11 +44,14 @@ hs_err_pid*
 *.ipr
 *.iws
 
+# Docker Secrets
+secrets/
+
 #target
 target/
 
-#docker secrets
-secrets/
+#docker
+docker-compose.yml
 
 ## Plugin-specific files:
 

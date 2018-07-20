@@ -1,0 +1,43 @@
+version: '3.1'
+
+volumes:
+  data:
+
+services:
+  demo-mysql:
+    image: mysql:5.7
+    volumes:
+      - data:/var/lib/mysql
+    ports:
+      - 3307:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootPass
+      - MYSQL_DATABASE=databaseName
+      - MYSQL_USER=databaseUser
+      - MYSQL_PASSWORD=userPassword
+
+  spring-boot-quiz:
+    image: nxtra/java-exam
+    depends_on:
+      - demo-mysql
+    ports:
+      - 8090:8090
+    environment:
+      - DATABASE_HOST=demo-mysql
+      - DATABASE_USER=databaseUser
+      - DATABASE_PASSWORD=userPassword
+      - DATABASE_NAME=databaseName
+      - DATABASE_PORT=3306
+
+  phpmyadmin:
+    depends_on:
+      - demo-mysql
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - 3001:80
+    environment:
+      PMA_HOST: demo-mysql
+      MYSQL_USER: databaseUser
+      MYSQL_PASSWORD: userPassword
+      MYSQL_ROOT_PASSWORD: rootPass
