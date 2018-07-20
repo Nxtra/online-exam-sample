@@ -24,9 +24,10 @@ spring:
     username: dbuser
     password: dbp4ss
     initialize: true
+    platform: mysql
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
@@ -41,7 +42,8 @@ spring:
     url: jdbc:mysql://${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}
     username: ${DATABASE_USER}
     password: ${DATABASE_PASSWORD}
-    initialize: false
+    initialize: true
+    platform: mysql
   jpa:
     hibernate:
       ddl-auto: update
