@@ -6,7 +6,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "EXAM")
+@Table(name = "exam")
 public class Exam {
 
     public String getName() {

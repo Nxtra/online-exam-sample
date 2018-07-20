@@ -10,7 +10,7 @@ import javax.persistence.*;
  * Question may have one (multiAnswer=false) or many correct answers (multiAnswer=true)
  */
 @Entity
-@Table(name = "QUESTION")
+@Table(name = "question")
 public class Question extends AbstractPersistable<Integer> {
 
     public Exam getExam() {

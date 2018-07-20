@@ -41,7 +41,10 @@ spring:
     url: jdbc:mysql://${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}
     username: ${DATABASE_USER}
     password: ${DATABASE_PASSWORD}
-    initialize: true
+    initialize: false
+  jpa:
+    hibernate:
+      ddl-auto: update
 
 
 

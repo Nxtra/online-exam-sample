@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "PROTOCOL")
+@Table(name = "protocol")
 public class    ExamProtocol extends AbstractPersistable<Integer> {
     public User getUser() {
         return user;

@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "USERS")
+@Table(name = "users")
 public class User extends AbstractPersistable<Integer> {
     public String getUsername() {
         return username;

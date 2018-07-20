@@ -8,7 +8,7 @@ import javax.persistence.*;
  * One of possible answers for Question
  */
 @Entity
-@Table(name = "ANSWER")
+@Table(name = "answer")
 public class Answer extends AbstractPersistable<Integer> {
     public Question getQuestion() {
         return question;
