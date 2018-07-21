@@ -1,13 +1,13 @@
 version: '3.3'
 
 volumes:
-  data:
+  testdata:
 
 services:
   quiz-mysql:
     image: mysql:5.7
     volumes:
-      - data:/var/lib/mysql
+      - testdata:/var/lib/mysql
     ports:
       - 3307:3306
     environment:
@@ -21,7 +21,7 @@ services:
     depends_on:
       - quiz-mysql
     ports:
-      - 8090:8090
+      - 8080:8080
     environment:
       - DATABASE_HOST=quiz-mysql
       - DATABASE_USER=databaseUser
@@ -35,7 +35,7 @@ services:
     image: phpmyadmin/phpmyadmin
     restart: always
     ports:
-      - 3001:80
+      - 3002:80
     environment:
       PMA_HOST: quiz-mysql
       MYSQL_USER: databaseUser
