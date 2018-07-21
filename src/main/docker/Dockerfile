@@ -1,5 +1,5 @@
 FROM java:8
-ADD java-exam.jar app.jar
+ADD quiz-app.jar app.jar
 ADD wrapper.sh wrapper.sh
 RUN bash -c 'chmod +x /wrapper.sh'
 RUN bash -c 'touch /app.jar'

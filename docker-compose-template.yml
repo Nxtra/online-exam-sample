@@ -1,10 +1,10 @@
-version: '3.1'
+version: '3.3'
 
 volumes:
   data:
 
 services:
-  demo-mysql:
+  quiz-mysql:
     image: mysql:5.7
     volumes:
       - data:/var/lib/mysql
@@ -16,14 +16,14 @@ services:
       - MYSQL_USER=databaseUser
       - MYSQL_PASSWORD=userPassword
 
-  spring-boot-quiz:
-    image: nxtra/java-exam
+  spring-boot-quiz-app:
+    image: nxtra/quiz-app
     depends_on:
-      - demo-mysql
+      - quiz-mysql
     ports:
       - 8090:8090
     environment:
-      - DATABASE_HOST=demo-mysql
+      - DATABASE_HOST=quiz-mysql
       - DATABASE_USER=databaseUser
       - DATABASE_PASSWORD=userPassword
       - DATABASE_NAME=databaseName
@@ -31,13 +31,13 @@ services:
 
   phpmyadmin:
     depends_on:
-      - demo-mysql
+      - quiz-mysql
     image: phpmyadmin/phpmyadmin
     restart: always
     ports:
       - 3001:80
     environment:
-      PMA_HOST: demo-mysql
+      PMA_HOST: quiz-mysql
       MYSQL_USER: databaseUser
       MYSQL_PASSWORD: userPassword
       MYSQL_ROOT_PASSWORD: rootPass
