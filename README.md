@@ -1,25 +1,25 @@
-#About
+# About
 * quiz app
 * run locally or with docker-compose
 * tests are run with h2 database
 * app uses sql database (local or in docker)
 
-##General info
+## General info
 Java 8  
 Scripts: /src/main/resources/\*.sql  
 Spring settings: /src/main/resources/\*.properties  
 Accounts: user = Nick, password = Nack  
 Default port: 8080  
 
-##Run locally
+## un locally
 
-####Build
+#### Build
 mvn clean install
 
-####Test
+#### Test
 mvn clean test -Dspring.profiles.active=test
 
-####Run
+#### Run
 * create local database named "quiz" on port 3306
 * create user "databaseUser" with password "userPassword"
 * grant user "databaseUser" access on database "quiz"
@@ -36,7 +36,7 @@ mvn clean test -Dspring.profiles.active=test
   * your sample data has now been add
 * navigate to localhost:8080 and login with user "Nick", password "Nack"
 
-##Run with docker-compose
+## Run with docker-compose
 * Install docker
 * in base directory */quiz-app/* run: docker-compose -f docker-compose-template.yml up -d
 * navigate to localhost:3002 (phpmyadmin) and login with user: "databaseUser", password: "userPassword"
