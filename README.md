@@ -11,7 +11,7 @@ Spring settings: /src/main/resources/\*.properties
 Accounts: user = Nick, password = Nack  
 Default port: 8080  
 
-## un locally
+## Run locally
 
 #### Build
 mvn clean install
