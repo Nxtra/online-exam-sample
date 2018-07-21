@@ -43,3 +43,6 @@ mvn clean test -Dspring.profiles.active=test
 * go to the SQL tab, copy content of data-h2.sql and press GO
   * you have just initialized the database with some sample questions
 * navigate to localhost:8080 and login with user "Nick", password "Nack"
+
+### Remark
+Currently running with docker-compose does not work on a amazon linux instance due to a docker network problem.  
