@@ -1,5 +1,7 @@
 package com.crossover.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.*;
@@ -81,10 +83,12 @@ public class    ExamProtocol extends AbstractPersistable<Integer> {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "USER_ID")
+    @JsonIgnore
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "EXAM_ID")
+    @JsonIgnore
     private Exam exam;
 
     @Column
@@ -96,11 +100,11 @@ public class    ExamProtocol extends AbstractPersistable<Integer> {
     private Date finish;
 
     @Column(name = "QUESTION_COUNT")
-    private Integer questionCount;
+    private int questionCount;
 
     @Column(name = "CORRECT_ANSWERS")
-    private Integer correctAnswers;
+    private int correctAnswers;
 
     @Column
-    private Integer grade;
+    private int grade;
 }

@@ -1,5 +1,7 @@
 package com.crossover.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.*;
@@ -36,9 +38,12 @@ public class Answer extends AbstractPersistable<Integer> {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "QUESTION_ID")
+    @JsonIgnore
     private Question question;
+
     @Column
     private String name; // answer
+
     @Column(name = "IS_CORRECT", nullable = false)
     private boolean correct = false; // is correct answer
 }

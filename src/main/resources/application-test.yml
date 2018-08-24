@@ -33,7 +33,7 @@ spring:
     driver-class-name: org.h2.Driver
     initialize: true
     password: ''
-    url: jdbc:h2:mem:exam;MODE=MYSQL;DB_CLOSE_DELAY=-1
+    url: jdbc:h2:mem:exam;MODE=MYSQL;
     username: sa
     platform: h2
   h2:
